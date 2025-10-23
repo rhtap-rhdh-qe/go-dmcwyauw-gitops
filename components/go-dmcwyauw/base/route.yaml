@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-dmcwyauw
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-dmcwyauw 
+  name: go-dmcwyauw
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-dmcwyauw
+    weight: 100 
